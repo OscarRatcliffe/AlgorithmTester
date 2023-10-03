@@ -13,8 +13,6 @@ function bubbleSort(toSort: Array<number>): Array<number> {
                 toSort[i+1] = num1;
                 earlyExit = false;
             }
-
-            console.log(toSort)
         }
     }
     return toSort

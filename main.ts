@@ -1,5 +1,4 @@
 const readline = require("readline-sync");
-const  bubbleSortFunc = require("./packages/bubbleSort");
 
 console.log("How many test numbers do you want?")
 const testNumsWanted: string = readline.question();
@@ -19,8 +18,9 @@ const algorithmChoice: string = readline.question();
 switch (algorithmChoice) {
     case ("B"):
             console.time("Bubble Sort Execution Time");
-            let sortedList: Array<number> = bubbleSortFunc.bubbleSort(generatedData)
-            console.timeEnd("Bubble Sort Execution Time");
+            let sortedList: Array<number> = bubbleSort(generatedData)
+            console.timeEnd(`Bubble Sort Execution Time`);
+            console.log(sortedList);
             break;
     case ("I"):
         break;

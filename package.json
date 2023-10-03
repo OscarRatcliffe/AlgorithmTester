@@ -4,9 +4,9 @@
   "description": "A program to compare between different algorithms",
   "main": "main.js",
   "scripts": {
-    "test": "ts-node main.ts",
+    "test": "tsc && node ./build/bundle.js",
     "build": "tsc",
-    "go": "node ./build/main.js"
+    "go": "node ./build/bundle.js"
   },
   "repository": {
     "type": "git",
