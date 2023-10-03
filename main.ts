@@ -17,11 +17,21 @@ const algorithmChoice: string = readline.question();
 
 switch (algorithmChoice) {
     case ("B"):
-            console.time("Bubble Sort Execution Time");
-            let sortedList: Array<number> = bubbleSort(generatedData)
-            console.timeEnd(`Bubble Sort Execution Time`);
-            console.log(sortedList);
-            break;
+
+        console.time("Bubble Sort Execution Time"); // TODO change to clock cycles
+
+        let sortedListBubble: Array<number> = bubbleSort(generatedData)
+
+        console.timeEnd(`Bubble Sort Execution Time`);
+        console.log(sortedListBubble);
+
     case ("I"):
-        break;
+
+        console.time("Bubble Sort Execution Time"); // TODO change to clock cycles
+
+        let sortedListInsertion: Array<number> = insertionSort(generatedData)
+
+        console.timeEnd(`Bubble Sort Execution Time`);
+        console.log(sortedListInsertion);
+
 }
