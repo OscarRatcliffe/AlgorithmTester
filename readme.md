@@ -8,6 +8,6 @@ This program:
 ### TODO
 - Took x amount longer than y if program ran using both sorts
 - Run multiple times and take average??
-- Testing scripts - https://www.testim.io/blog/node-js-unit-testing-get-started-quickly-with-examples/
+- Testing scripts
 - Auto deploy to docker container
 - Branch with web UI as well - react + express
