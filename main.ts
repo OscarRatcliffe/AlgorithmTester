@@ -14,39 +14,55 @@ function generateData(length: number): Array<number> {
     return generatedData;
 }
 
+function userInput(question: string, validReturns: Array<String>): string {
+    
+    while (true) {
+
+        console.log(`${question} (${validReturns}):`)
+        const userResponse: string = readline.question();
+
+        if (validReturns.includes(userResponse)) {
+            return userResponse
+        } 
+        else {
+            console.clear();
+            console.log(`----------\nPlease enter a valid response: ${validReturns}\n----------\n`);
+        }
+    }
+}
+
 // -------------
 // Generate list
 // -------------
 
-var validInput: boolean = false;
-while (!validInput) {
+function main() {
 
-    console.log("How many test numbers do you want?")
-    const testNumsWanted: string = readline.question();
-
-    var testNumsConverted: number = parseInt(testNumsWanted);
-
-    if (isNaN(testNumsConverted)) {
-        console.clear();
-        console.log("----------\nPlease enter a valid number\n----------\n");
-    } else {
-        validInput = true;
-    }
-}
-
-let generatedData: Array<number> = generateData(testNumsConverted);
-
-// ---------------------
-// Pick algorithm choice
-// ---------------------
-
-var appRunning:boolean = true;
-while (appRunning) {
-    validInput = false;
+    var validInput: boolean = false;
     while (!validInput) {
-        console.log("Do you want to use (B)ubble or (I)nsertion sort?: ")
-        const algorithmChoice: string = readline.question();
+
+        console.log("How many test numbers do you want?")
+        const testNumsWanted: string = readline.question();
+
+        var testNumsConverted: number = parseInt(testNumsWanted);
+
+        if (isNaN(testNumsConverted)) {
+            console.clear();
+            console.log("----------\nPlease enter a valid number\n----------\n");
+        } else {
+            validInput = true;
+        }
+    }
+
+    let generatedData: Array<number> = generateData(testNumsConverted);
+
+    // ---------------------
+    // Pick algorithm choice
+    // ---------------------
+
+    var appRunning:boolean = true;
+    while (appRunning) {
         
+        const algorithmChoice: string = userInput("Do you want to use Bubble or Insertion sort?: ", ["B", "I"])
         switch (algorithmChoice) {
 
             // --------------
@@ -79,41 +95,30 @@ while (appRunning) {
     
 
                 let bubbleTimeTaken = bubblePerfEnd-bubblePerfStart
-              
+            
                 console.clear();
                 console.log(`The bubble sort took ${bubbleTimeTaken.toPrecision(3)}ms and retured the result ${sortedListBubble}`);
 
                 validInput = true;
                 break;
             
-            // --------------
-            // Input checking
-            // --------------
-
-            default:
-                console.clear();
-                console.log("----------\nPlease enter either 'B' or 'I'\n----------\n");
         }
-    }
 
-    // ------------------
-    // Check if run again
-    // ------------------
+        // ------------------
+        // Check if run again
+        // ------------------
 
-    validInput = false;
-    while (!validInput) {
-        console.log("Do you want to run again (Y/N): ")
-        const runAgainChoice: string = readline.question();
+        const runAgainChoice: string = userInput("Do you want to run again?",["Y","N"])
         if (runAgainChoice == "N") {
             validInput = true;
             appRunning = false;
         } 
-        else if (runAgainChoice == "Y") {
+        else {
             validInput = true;
-        } else {
-            console.clear();
-        console.log("----------\nPlease enter either 'Y' or 'N'\n----------\n");
         }
     }
 
 }
+
+main();
+module.exports.main = main;
