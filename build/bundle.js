@@ -60,20 +60,39 @@ let generatedData = generateData(testNumsConverted);
 // ---------------------
 // Pick algorithm choice
 // ---------------------
-console.log("Do you want to use (B)ubble or (I)nsertion sort?: ");
-const algorithmChoice = readline.question();
-switch (algorithmChoice) {
-    case ("B"):
-        console.time("Bubble Sort Execution Time"); // TODO change to clock cycles
-        let sortedListBubble = bubbleSort(generatedData);
-        console.clear();
-        console.timeEnd(`Bubble Sort Execution Time`);
-        console.log(sortedListBubble);
-    case ("I"):
-        console.time("Insertion Sort Execution Time"); // TODO change to clock cycles
-        let sortedListInsertion = insertionSort(generatedData);
-        console.clear();
-        console.timeEnd(`Insertion Sort Execution Time`);
-        console.log(sortedListInsertion);
+var appRunning = true;
+while (appRunning) {
+    console.log("Do you want to use (B)ubble or (I)nsertion sort?: ");
+    const algorithmChoice = readline.question();
+    switch (algorithmChoice) {
+        case ("B"):
+            const insertionPerfStart = performance.now();
+            let sortedListBubble = bubbleSort(generatedData);
+            const insertionPerfEnd = performance.now();
+            console.clear();
+            console.log(`The bubble sort took ${insertionPerfEnd - insertionPerfStart}ms and retured the result ${sortedListBubble}}`);
+        case ("I"):
+            const bubblePerfStart = performance.now();
+            let sortedListInsertion = insertionSort(generatedData);
+            const bubblePerfEnd = performance.now();
+            console.clear();
+            console.log(`The bubble sort took ${bubblePerfEnd - bubblePerfStart}ms and retured the result ${sortedListInsertion}}`);
+    }
+    validInput = false;
+    while (true) {
+        console.log("Do you want to run again (Y/N): ");
+        const runAgainChoice = readline.question();
+        if (runAgainChoice == "N") {
+            validInput = true;
+            appRunning = false;
+        }
+        else if (runAgainChoice == "Y") {
+            validInput = true;
+        }
+        else {
+            console.clear();
+            console.log("----------\nPlease enter either 'Y' or 'N'\n----------\n");
+        }
+    }
 }
 //# sourceMappingURL=bundle.js.map

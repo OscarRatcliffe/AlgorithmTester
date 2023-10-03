@@ -40,28 +40,56 @@ let generatedData: Array<number> = generateData(testNumsConverted);
 // Pick algorithm choice
 // ---------------------
 
-console.log("Do you want to use (B)ubble or (I)nsertion sort?: ")
-const algorithmChoice: string = readline.question();
+var appRunning:boolean = true;
+while (appRunning) {
+    validInput = false;
+    while (!validInput) {
+        console.log("Do you want to use (B)ubble or (I)nsertion sort?: ")
+        const algorithmChoice: string = readline.question();
+        
+        switch (algorithmChoice) {
+            case ("B"):
+        
+                const insertionPerfStart = performance.now();
+                let sortedListBubble: Array<number> = bubbleSort(generatedData)
+                const insertionPerfEnd = performance.now();
+        
+                console.clear();
+                console.log(`The bubble sort took ${insertionPerfEnd-insertionPerfStart}ms and retured the result ${sortedListBubble}}`);
 
-switch (algorithmChoice) {
-    case ("B"):
+                validInput = true;
+        
+            case ("I"):
+        
+                const bubblePerfStart = performance.now();
+                let sortedListInsertion: Array<number> = insertionSort(generatedData)
+                const bubblePerfEnd = performance.now();
+    
+                console.clear();
+                console.log(`The bubble sort took ${bubblePerfEnd-bubblePerfStart}ms and retured the result ${sortedListInsertion}`);
 
-        console.time("Bubble Sort Execution Time"); // TODO change to clock cycles
+                validInput = true;
+            
+            default:
+                console.clear();
+            console.log("----------\nPlease enter either 'B' or 'I'\n----------\n");
+        }
+    }
 
-        let sortedListBubble: Array<number> = bubbleSort(generatedData)
-
-        console.clear();
-        console.timeEnd(`Bubble Sort Execution Time`);
-        console.log(sortedListBubble);
-
-    case ("I"):
-
-        console.time("Insertion Sort Execution Time"); // TODO change to clock cycles
-
-        let sortedListInsertion: Array<number> = insertionSort(generatedData)
-
-        console.clear();
-        console.timeEnd(`Insertion Sort Execution Time`);
-        console.log(sortedListInsertion);
+    validInput = false;
+    while (!validInput) {
+        console.log("Do you want to run again (Y/N): ")
+        const runAgainChoice: string = readline.question();
+        if (runAgainChoice == "N") {
+            validInput = true;
+            appRunning = false;
+        } 
+        else if (runAgainChoice == "Y") {
+            validInput = true;
+        } else {
+            console.clear();
+        console.log("----------\nPlease enter either 'Y' or 'N'\n----------\n");
+        }
+    }
 
 }
