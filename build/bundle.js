@@ -15,25 +15,65 @@ function bubbleSort(toSort) {
     return toSort;
 }
 function insertionSort(toSort) {
+    var sortedArray = [];
+    for (let i = 0; i < toSort.length; i++) {
+        sortedArray.unshift(toSort[i]);
+        for (var j = 0; j < sortedArray.length; j++) {
+            var num1 = sortedArray[j];
+            var num2 = sortedArray[j + 1];
+            if (num1 > num2) {
+                sortedArray[j] = num2;
+                sortedArray[j + 1] = num1;
+            }
+        }
+    }
+    return sortedArray;
 }
 const readline = require("readline-sync");
-console.log("How many test numbers do you want?");
-const testNumsWanted = readline.question();
-var testNumsConverted = parseInt(testNumsWanted); //TODO handle errors
-var generatedData = [];
-for (let i = 0; i < testNumsConverted; i++) {
-    generatedData.push(Math.floor(Math.random() * 100));
+// ---------
+// Functions
+// ---------
+function generateData(length) {
+    var generatedData = [];
+    for (let i = 0; i < length; i++) {
+        generatedData.push(Math.floor(Math.random() * 100));
+    }
+    return generatedData;
 }
-console.log(generatedData);
+// -------------
+// Generate list
+// -------------
+var validInput = false;
+while (!validInput) {
+    console.log("How many test numbers do you want?");
+    const testNumsWanted = readline.question();
+    var testNumsConverted = parseInt(testNumsWanted);
+    if (isNaN(testNumsConverted)) {
+        console.clear();
+        console.log("----------\nPlease enter a valid number\n----------\n");
+    }
+    else {
+        validInput = true;
+    }
+}
+let generatedData = generateData(testNumsConverted);
+// ---------------------
+// Pick algorithm choice
+// ---------------------
 console.log("Do you want to use (B)ubble or (I)nsertion sort?: ");
 const algorithmChoice = readline.question();
 switch (algorithmChoice) {
     case ("B"):
-        console.time();
-        let sortedList = bubbleSort(generatedData);
-        console.timeEnd(`The final list is ${sortedList} and took`);
-        break;
+        console.time("Bubble Sort Execution Time"); // TODO change to clock cycles
+        let sortedListBubble = bubbleSort(generatedData);
+        console.clear();
+        console.timeEnd(`Bubble Sort Execution Time`);
+        console.log(sortedListBubble);
     case ("I"):
-        break;
+        console.time("Insertion Sort Execution Time"); // TODO change to clock cycles
+        let sortedListInsertion = insertionSort(generatedData);
+        console.clear();
+        console.timeEnd(`Insertion Sort Execution Time`);
+        console.log(sortedListInsertion);
 }
 //# sourceMappingURL=bundle.js.map
