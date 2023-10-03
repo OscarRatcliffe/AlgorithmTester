@@ -59,8 +59,7 @@ function main() {
     // Pick algorithm choice
     // ---------------------
 
-    var appRunning:boolean = true;
-    while (appRunning) {
+    while (true) {
         
         const algorithmChoice: string = userInput("Do you want to use Bubble or Insertion sort?: ", ["B", "I"])
         switch (algorithmChoice) {
@@ -79,7 +78,6 @@ function main() {
                 console.clear();
                 console.log(`The bubble sort took ${insertionTimeTaken.toPrecision(3)}ms and retured the result ${sortedListInsertion}}`);
 
-                validInput = true;
                 break;
         
             
@@ -99,7 +97,6 @@ function main() {
                 console.clear();
                 console.log(`The bubble sort took ${bubbleTimeTaken.toPrecision(3)}ms and retured the result ${sortedListBubble}`);
 
-                validInput = true;
                 break;
             
         }
@@ -110,11 +107,10 @@ function main() {
 
         const runAgainChoice: string = userInput("Do you want to run again?",["Y","N"])
         if (runAgainChoice == "N") {
-            validInput = true;
-            appRunning = false;
+            return 1;
         } 
         else {
-            validInput = true;
+            // Pass
         }
     }
 

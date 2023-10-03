@@ -17,4 +17,4 @@ function insertionSort (toSort: Array<number>): Array<number> {
     return sortedArray
 }
 
-module.exports.main = insertionSort;
+module.exports.insertionSort = insertionSort;

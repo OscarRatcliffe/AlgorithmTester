@@ -30,7 +30,7 @@ function insertionSort(toSort) {
     }
     return sortedArray;
 }
-module.exports.main = insertionSort;
+module.exports.insertionSort = insertionSort;
 const readline = require("readline-sync");
 // ---------
 // Functions
@@ -76,8 +76,7 @@ function main() {
     // ---------------------
     // Pick algorithm choice
     // ---------------------
-    var appRunning = true;
-    while (appRunning) {
+    while (true) {
         const algorithmChoice = userInput("Do you want to use Bubble or Insertion sort?: ", ["B", "I"]);
         switch (algorithmChoice) {
             // --------------
@@ -90,7 +89,6 @@ function main() {
                 let insertionTimeTaken = insertionPerfEnd - insertionPerfStart;
                 console.clear();
                 console.log(`The bubble sort took ${insertionTimeTaken.toPrecision(3)}ms and retured the result ${sortedListInsertion}}`);
-                validInput = true;
                 break;
             // -----------
             // Bubble sort
@@ -102,7 +100,6 @@ function main() {
                 let bubbleTimeTaken = bubblePerfEnd - bubblePerfStart;
                 console.clear();
                 console.log(`The bubble sort took ${bubbleTimeTaken.toPrecision(3)}ms and retured the result ${sortedListBubble}`);
-                validInput = true;
                 break;
         }
         // ------------------
@@ -110,11 +107,10 @@ function main() {
         // ------------------
         const runAgainChoice = userInput("Do you want to run again?", ["Y", "N"]);
         if (runAgainChoice == "N") {
-            validInput = true;
-            appRunning = false;
+            return 1;
         }
         else {
-            validInput = true;
+            // Pass
         }
     }
 }
