@@ -1,0 +1,20 @@
+{
+  "name": "algorithmtester",
+  "version": "1.0.0",
+  "description": "A program to compare between different algorithms",
+  "main": "main.js",
+  "scripts": {
+    "test": "ts-node main.ts",
+    "build": "tsc main.ts",
+    "go": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "algorithmTester"
+  },
+  "author": "Oscar Ratcliffe",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
