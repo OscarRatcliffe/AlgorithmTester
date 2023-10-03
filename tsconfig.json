@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+       "target": "ES2015",
+       "outFile": "build/bundle.js",
+       "module": "amd",
+       "sourceMap": true,
+    },
+    "include": [
+       "src/*.ts",
+       "main.ts"
+    ]
+ }

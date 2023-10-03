@@ -5,8 +5,8 @@
   "main": "main.js",
   "scripts": {
     "test": "ts-node main.ts",
-    "build": "tsc main.ts",
-    "go": "node main.js"
+    "build": "tsc",
+    "go": "node ./build/main.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "license": "ISC",
   "dependencies": {
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.2"
   }
 }
