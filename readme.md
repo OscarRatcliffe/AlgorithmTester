@@ -6,5 +6,6 @@ This program:
 - Returns the sorted list alongside the ammount of time taken
 
 ### TODO
-- Change speed measurement to clock cycles
-- Write insertion sort option
+- Took x amount longer than y if program ran using both sorts
+- Run multiple times and take average??
+- Testing scripts

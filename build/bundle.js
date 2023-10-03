@@ -62,24 +62,36 @@ let generatedData = generateData(testNumsConverted);
 // ---------------------
 var appRunning = true;
 while (appRunning) {
-    console.log("Do you want to use (B)ubble or (I)nsertion sort?: ");
-    const algorithmChoice = readline.question();
-    switch (algorithmChoice) {
-        case ("B"):
-            const insertionPerfStart = performance.now();
-            let sortedListBubble = bubbleSort(generatedData);
-            const insertionPerfEnd = performance.now();
-            console.clear();
-            console.log(`The bubble sort took ${insertionPerfEnd - insertionPerfStart}ms and retured the result ${sortedListBubble}}`);
-        case ("I"):
-            const bubblePerfStart = performance.now();
-            let sortedListInsertion = insertionSort(generatedData);
-            const bubblePerfEnd = performance.now();
-            console.clear();
-            console.log(`The bubble sort took ${bubblePerfEnd - bubblePerfStart}ms and retured the result ${sortedListInsertion}}`);
+    validInput = false;
+    while (!validInput) {
+        console.log("Do you want to use (B)ubble or (I)nsertion sort?: ");
+        const algorithmChoice = readline.question();
+        switch (algorithmChoice) {
+            case ("I"):
+                const insertionPerfStart = performance.now();
+                let sortedListInsertion = insertionSort(generatedData);
+                const insertionPerfEnd = performance.now();
+                let insertionTimeTaken = insertionPerfEnd - insertionPerfStart;
+                console.clear();
+                console.log(`The bubble sort took ${insertionTimeTaken.toPrecision(3)}ms and retured the result ${sortedListInsertion}}`);
+                validInput = true;
+                break;
+            case ("B"):
+                const bubblePerfStart = performance.now();
+                let sortedListBubble = bubbleSort(generatedData);
+                const bubblePerfEnd = performance.now();
+                let bubbleTimeTaken = bubblePerfEnd - bubblePerfStart;
+                console.clear();
+                console.log(`The bubble sort took ${bubbleTimeTaken.toPrecision(3)}ms and retured the result ${sortedListBubble}`);
+                validInput = true;
+                break;
+            default:
+                console.clear();
+                console.log("----------\nPlease enter either 'B' or 'I'\n----------\n");
+        }
     }
     validInput = false;
-    while (true) {
+    while (!validInput) {
         console.log("Do you want to run again (Y/N): ");
         const runAgainChoice = readline.question();
         if (runAgainChoice == "N") {
