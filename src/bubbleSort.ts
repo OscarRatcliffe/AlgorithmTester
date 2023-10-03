@@ -17,3 +17,5 @@ function bubbleSort(toSort: Array<number>): Array<number> {
     }
     return toSort
 }
+
+module.exports.bubbleSort = bubbleSort;
