@@ -64,9 +64,9 @@ function main() {
         console.log("How many test numbers do you want?");
         const testNumsWanted = readline.question();
         var testNumsConverted = parseInt(testNumsWanted);
-        if (isNaN(testNumsConverted)) {
+        if (isNaN(testNumsConverted) || testNumsConverted < 2) {
             console.clear();
-            console.log("----------\nPlease enter a valid number\n----------\n");
+            console.log("----------\nPlease enter a valid number greater than 1\n----------\n");
         }
         else {
             validInput = true;
@@ -88,7 +88,7 @@ function main() {
                 const insertionPerfEnd = performance.now();
                 let insertionTimeTaken = insertionPerfEnd - insertionPerfStart;
                 console.clear();
-                console.log(`The bubble sort took ${insertionTimeTaken.toPrecision(3)}ms and retured the result ${sortedListInsertion}}`);
+                console.log(`The insertion sort took ${insertionTimeTaken.toPrecision(3)}ms and retured the result ${sortedListInsertion}`);
                 break;
             // -----------
             // Bubble sort
