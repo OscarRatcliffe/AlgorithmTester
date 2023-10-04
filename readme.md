@@ -13,38 +13,35 @@ This program:
 
 ## Testing
 Run "npm run test" to run the test suite in main.test.js
-![Test results](image.png)
+![Test results](./images/image.png)
 
 In addition to this to test user input I used the following tests:
-    - Input 1:
-        - Erroneous - "A"
-        ![Results](image-1.png)
-        PASS
+- Input 1:
+- Erroneous - "A"  
+![Results](./images/image-1.png)  
 
-        - Out of range - "-1"
-        ![Results](image-1.png)
-        PASS
+- Out of range - "-1"  
+![Results](./images/image-1.png)  
 
-        - Boundary - "2"
-        ![Results](image-2.png)
-        PASS
-    
-    - Input 2:
-        - Erroneous - "A"
-        ![Results](image-3.png)
+- Boundary - "2"  
+![Results](./images/image-2.png)  
 
-        - Valid - "B"
-        ![Results](image-4.png)
+- Input 2:  
+- Erroneous - "A"  
+![Results](./images/image-3.png)  
 
-        - Valid - "I"
-        ![Results](image-5.png)
+- Valid - "B"  
+![Results](./images/image-4.png)  
 
-    - Input 3:
-        - Erroneous - "A"
-        ![Results](image-6.png)
-        
-        - Valid - "Y"
-        ![Results](image-7.png)
+- Valid - "I"  
+![Results](./images/image-5.png)  
 
-        - Valid - "N"
-        ![Results](image-8.png)
+- Input 3:  
+- Erroneous - "A"  
+![Results](./images/image-6.png)  
+
+- Valid - "Y"  
+![Results](./images/image-7.png)  
+
+- Valid - "N"  
+![Results](./images/image-8.png)  
