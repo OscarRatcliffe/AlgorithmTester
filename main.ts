@@ -45,7 +45,7 @@ function main() {
 
         var testNumsConverted: number = parseInt(testNumsWanted);
 
-        if (isNaN(testNumsConverted)) {
+        if (isNaN(testNumsConverted) || testNumsConverted < 1) {
             console.clear();
             console.log("----------\nPlease enter a valid number\n----------\n");
         } else {
