@@ -76,7 +76,7 @@ function main() {
         
                 let insertionTimeTaken: number = insertionPerfEnd-insertionPerfStart;
                 console.clear();
-                console.log(`The insertion sort took ${insertionTimeTaken.toPrecision(3)}ms and retured the result ${sortedListInsertion}}`);
+                console.log(`The insertion sort took ${insertionTimeTaken.toPrecision(3)}ms and retured the result ${sortedListInsertion}`);
 
                 break;
         
