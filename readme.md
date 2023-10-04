@@ -12,7 +12,7 @@ This program:
 - Branch with web UI as well - react + express  
 
 ## Testing
-Run "npm run test" to run the test suite in [main.test.js](./tests/main.test.js)
+Run "npm run test" to run the test suite in [main.test.js](./tests/main.test.js)  
 ![Test results](./images/image.png)  
 
 In addition to this to test user input I used the following tests:  
