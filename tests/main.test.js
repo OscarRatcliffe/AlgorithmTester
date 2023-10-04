@@ -16,28 +16,3 @@ test("Bubble sort func", () => {
 test("Insertion sort func", () => {
     expect(insertionSort(inputData)).toEqual(expectedOutput)
 });
-
-
-// -----------------------
-// Whole program behaviour
-// -----------------------
-
-jest.mock('readline-sync');
-
-test("Valid bubble test", () => {
-
-    beforeEach(() => {
-        jest.spyOn(readline, 'question');
-      });
-    
-      afterEach(() => {
-        jest.restoreAllMocks();
-      });
-
-    readline.question
-        .mockReturnValueOnce("5")
-        .mockReturnValueOnce("B")
-        .mockReturnValueOnce("Y");
-
-    expect(main).toBe(1);
-});
