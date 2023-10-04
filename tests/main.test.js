@@ -12,7 +12,6 @@ test("Bubble sort func", () => {
     expect(bubbleSort(inputData)).toEqual(expectedOutput)
 });
 
-
 test("Insertion sort func", () => {
     expect(insertionSort(inputData)).toEqual(expectedOutput)
 });
