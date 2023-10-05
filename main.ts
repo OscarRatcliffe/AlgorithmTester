@@ -117,4 +117,4 @@ function main() {
 }
 
 main();
-module.exports.main = main;
+module.exports.generateData = generateData;

@@ -10,11 +10,10 @@ This program:
 - Run multiple times and take average??  
 - Auto deploy to docker container  
 - Branch with web UI as well - react + express  
-- Add specific G classroom tests  
 
 ## Testing
 Run "npm run test" to run the test suite in [main.test.js](./tests/main.test.js)  
-![Test results](./images/image.png)  
+![Test results](image.png)  
 
 In addition to this to test user input I used the following tests:  
 - Input 1:  

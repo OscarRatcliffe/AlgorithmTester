@@ -15,6 +15,7 @@
   "author": "Oscar Ratcliffe",
   "license": "ISC",
   "dependencies": {
+    "nexe": "^4.0.0-rc.2",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
