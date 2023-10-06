@@ -45,3 +45,6 @@ In addition to this to test user input I used the following tests:
 
 - Valid - "N"  
 ![Results](./images/image-8.png)  
+
+## Performance evaluation  
+As for the performance insertion is faster overall taking ~80% of the time that the bubble sort did when given a list of 1000 items
