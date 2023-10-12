@@ -4,7 +4,7 @@
   "description": "A program to compare between different algorithms",
   "main": "main.js",
   "scripts": {
-    "go": "tsc && node ./build/bundle.js",
+    "go": "tsc && node ./build/main.js",
     "build": "tsc",
     "test": "jest"
   },

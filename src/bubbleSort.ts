@@ -1,4 +1,4 @@
-function bubbleSort(toSort: Array<number>): Array<number> {
+export function bubbleSort(toSort: Array<number>): Array<number> {
     var earlyExit: boolean = false;
     while(!earlyExit) {
 
@@ -18,4 +18,4 @@ function bubbleSort(toSort: Array<number>): Array<number> {
     return toSort
 }
 
-module.exports.bubbleSort = bubbleSort;
+module.exports.bubbleSort = bubbleSort; 

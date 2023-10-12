@@ -1,3 +1,5 @@
+import { bubbleSort } from "./src/bubbleSort";
+import { insertionSort } from "./src/insertionSort"
 const readline = require("readline-sync");
 
 // ---------
@@ -31,6 +33,7 @@ function userInput(question: string, validReturns: Array<String>): string {
     }
 }
 
+
 // -------------
 // Generate list
 // -------------
@@ -61,7 +64,7 @@ function main() {
 
     while (true) {
         
-        const algorithmChoice: string = userInput("Do you want to use Bubble or Insertion sort?: ", ["B", "I"])
+        const algorithmChoice: string = userInput("Do you want to use Bubble or Insertion sort?: ", ["B", "I", "T"])
         switch (algorithmChoice) {
 
             // --------------
@@ -70,15 +73,16 @@ function main() {
 
             case ("I"):
         
-                const insertionPerfStart = performance.now();
-                let sortedListInsertion: Array<number> = insertionSort(generatedData)
-                const insertionPerfEnd = performance.now();
-        
-                let insertionTimeTaken: number = insertionPerfEnd-insertionPerfStart;
-                console.clear();
-                console.log(`The insertion sort took ${insertionTimeTaken.toPrecision(3)}ms and retured the result ${sortedListInsertion}`);
+                    const insertionPerfStart = performance.now();
+                    let sortedListInsertion: Array<number> = insertionSort(generatedData)
+                    const insertionPerfEnd = performance.now();
+            
+                    let insertionTimeTaken: number = insertionPerfEnd-insertionPerfStart;
 
-                break;
+                    console.clear();
+                    console.log(`The insertion sort took ${insertionTimeTaken.toPrecision(3)}ms and retured the result ${sortedListInsertion}`);
+    
+                    break;
         
             
             // -----------
@@ -98,7 +102,6 @@ function main() {
                 console.log(`The bubble sort took ${bubbleTimeTaken.toPrecision(3)}ms and retured the result ${sortedListBubble}`);
 
                 break;
-            
         }
 
         // ------------------
@@ -118,3 +121,4 @@ function main() {
 
 main();
 module.exports.generateData = generateData;
+

@@ -1,36 +1,7 @@
-function bubbleSort(toSort) {
-    var earlyExit = false;
-    while (!earlyExit) {
-        earlyExit = true;
-        for (var i = 0; i < toSort.length; i++) {
-            var num1 = toSort[i];
-            var num2 = toSort[i + 1];
-            if (num1 > num2) {
-                toSort[i] = num2;
-                toSort[i + 1] = num1;
-                earlyExit = false;
-            }
-        }
-    }
-    return toSort;
-}
-module.exports.bubbleSort = bubbleSort;
-function insertionSort(toSort) {
-    var sortedArray = [];
-    for (let i = 0; i < toSort.length; i++) {
-        sortedArray.unshift(toSort[i]);
-        for (var j = 0; j < sortedArray.length; j++) {
-            var num1 = sortedArray[j];
-            var num2 = sortedArray[j + 1];
-            if (num1 > num2) {
-                sortedArray[j] = num2;
-                sortedArray[j + 1] = num1;
-            }
-        }
-    }
-    return sortedArray;
-}
-module.exports.insertionSort = insertionSort;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const bubbleSort_1 = require("./src/bubbleSort");
+const insertionSort_1 = require("./src/insertionSort");
 const readline = require("readline-sync");
 // ---------
 // Functions
@@ -77,14 +48,14 @@ function main() {
     // Pick algorithm choice
     // ---------------------
     while (true) {
-        const algorithmChoice = userInput("Do you want to use Bubble or Insertion sort?: ", ["B", "I"]);
+        const algorithmChoice = userInput("Do you want to use Bubble or Insertion sort?: ", ["B", "I", "T"]);
         switch (algorithmChoice) {
             // --------------
             // Insertion sort
             // --------------
             case ("I"):
                 const insertionPerfStart = performance.now();
-                let sortedListInsertion = insertionSort(generatedData);
+                let sortedListInsertion = (0, insertionSort_1.insertionSort)(generatedData);
                 const insertionPerfEnd = performance.now();
                 let insertionTimeTaken = insertionPerfEnd - insertionPerfStart;
                 console.clear();
@@ -95,7 +66,7 @@ function main() {
             // -----------
             case ("B"):
                 const bubblePerfStart = performance.now();
-                let sortedListBubble = bubbleSort(generatedData);
+                let sortedListBubble = (0, bubbleSort_1.bubbleSort)(generatedData);
                 const bubblePerfEnd = performance.now();
                 let bubbleTimeTaken = bubblePerfEnd - bubblePerfStart;
                 console.clear();
@@ -116,4 +87,4 @@ function main() {
 }
 main();
 module.exports.generateData = generateData;
-//# sourceMappingURL=bundle.js.map
+//# sourceMappingURL=main.js.map
