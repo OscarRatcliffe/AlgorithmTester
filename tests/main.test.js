@@ -27,12 +27,18 @@ const testSizes = [100, 1000, 5000];
 for (let i = 0; i < testSizes.length; i++) {
 
     const unsortedData = generateData(testSizes[i]);    
+    
+    test("Bubble sort scale", () => {
+        expect(bubbleSort(unsortedData)).toEqual(unsortedData.sort((a,b) => a-b));
+    });
+}
 
+for (let i = 0; i < testSizes.length; i++) {
+
+    const unsortedData = generateData(testSizes[i]);    
+    
     test("Insertion sort scale", () => {
         expect(insertionSort(unsortedData)).toEqual(unsortedData.sort((a,b) => a-b));
     });
-    
-//     test("Bubble sort scale", () => {
-//         expect(bubbleSort(unsortedData)).toEqual(unsortedData.sort((a,b) => a-b));
-//     });
 }
+
