@@ -6,6 +6,8 @@ This program:
 - Returns the sorted list alongside the ammount of time taken  
 
 ### TODO  
+- Fix planning diagram
+- Fix error in error reporting
 - Took x amount longer than y if program ran using both sorts  
 - Run multiple times and take average??  
 - Auto deploy to docker container  
