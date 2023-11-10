@@ -24,20 +24,23 @@ test("Insertion sort func", () => {
 
 const testSizes = [100, 1000, 5000];
 
-for (let i = 0; i < testSizes.length; i++) {
+const testData = [];
 
-    const unsortedData = generateData(testSizes[i]);    
+for (let i = 0; i < testSizes.length; i++) { //Test for each size in given list
+
+    const unsortedData = generateData(testSizes[i]); //Use generate Data func defined in main.ts
     
+    testData.push(unsortedData)
+}
+
+for (let i = 0; i < testData.length; i++) { //Test for each size in given list  
     test("Bubble sort scale", () => {
-        expect(bubbleSort(unsortedData)).toEqual(unsortedData.sort((a,b) => a-b));
+        expect(bubbleSort(testData[i])).toEqual(testData[i].sort((a,b) => a-b));
     });
 }
 
-for (let i = 0; i < testSizes.length; i++) {
-
-    const unsortedData = generateData(testSizes[i]);    
-    
+for (let i = 0; i < testData.length; i++) { //Test for each size in given list  
     test("Insertion sort scale", () => {
-        expect(insertionSort(unsortedData)).toEqual(unsortedData.sort((a,b) => a-b));
+        expect(insertionSort(testData[i])).toEqual(testData[i].sort((a,b) => a-b));
     });
 }
