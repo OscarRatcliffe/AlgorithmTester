@@ -41,4 +41,3 @@ for (let i = 0; i < testSizes.length; i++) {
         expect(insertionSort(unsortedData)).toEqual(unsortedData.sort((a,b) => a-b));
     });
 }
-
